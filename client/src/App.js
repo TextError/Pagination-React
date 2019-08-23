@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './App.css';
+import './app.scss';
 
 const App = () => (
-  <div>
-    App
+  <div className='container'>
+    app
   </div>
 );
 
