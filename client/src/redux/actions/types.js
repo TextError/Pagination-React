@@ -1,6 +1,7 @@
-const ERRORS = {
-  ERROR: 'ERROR',
-  CLEAR_ERROR: 'CLEAR_ERROR'
-};
+const POSTS = {
+  POST_LOADING: 'POST_LOADING',
+  POST_UPDATE: 'POST_UPDATE',
+  POST_ERROR: 'POST_ERROR'
+}
 
-export { ERRORS }
+export { POSTS }

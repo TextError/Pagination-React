@@ -2,16 +2,16 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import errors from './errors';
+import posts from './posts'
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['cart']
+  whitelist: ['posts']
 };
 
 const rootReducer = combineReducers({
-  errors
+  posts
 });
 
 
