@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { select_posts_posts } from '../../redux/selectors/posts';
+import { select_posts_posts } from '../../../redux/selectors/posts';
 
 const Posts = ({ posts }) => {
   return (

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { select_posts_pages } from '../../redux/selectors/posts';
-import { changePage } from '../../redux/actions/pagination';
+import { select_posts_pages } from '../../../redux/selectors/posts';
+import { changePage } from '../../../redux/actions/pagination';
 
 const Pagination = ({ pages, changePage }) => {
   const onChange = i => {

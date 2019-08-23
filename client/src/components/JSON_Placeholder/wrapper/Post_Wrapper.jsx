@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
-import Posts from './Posts';
-import Spinner from '../common/spinner/Spinner';
+import Posts from '../posts/Posts';
+import Spinner from '../../common/spinner/Spinner';
 
-import { select_posts_isLoaded } from '../../redux/selectors/posts';
+import { select_posts_isLoaded } from '../../../redux/selectors/posts';
 
 
 const mapStateToProps = createStructuredSelector({
