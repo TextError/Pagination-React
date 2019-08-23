@@ -4,4 +4,8 @@ const POSTS = {
   POST_ERROR: 'POST_ERROR'
 }
 
-export { POSTS }
+const PAGE = {
+  CHANGE_PAGE: 'CHANGE_PAGE'
+}
+
+export { POSTS, PAGE }

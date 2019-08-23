@@ -1,4 +1,4 @@
-import { POSTS } from '../actions/types';
+import { POSTS, PAGE } from '../actions/types';
 import { postsPerPageFunc, pageNumberFunc } from '../utils/posts';
 
 const INITIAL_STATE = {
@@ -30,6 +30,12 @@ const setPosts = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         error: action.payload
+      }
+    case PAGE.CHANGE_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload,
+        posts: postsPerPageFunc( action.payload, state.postsPerPage, state.data )
       }
     default:
       return state;
