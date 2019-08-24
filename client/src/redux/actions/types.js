@@ -6,6 +6,12 @@ const POSTS = {
 
 const PAGE = {
   CHANGE_PAGE: 'CHANGE_PAGE'
+};
+
+const MOVIE = {
+  MOVIE_LOADING: 'MOVIE_LOADING',
+  MOVIE_UPDATE: 'MOVIE_UPDATE',
+  MOVIE_ERROR: 'MOVIE_ERROR'
 }
 
-export { POSTS, PAGE }
+export { POSTS, PAGE, MOVIE }
