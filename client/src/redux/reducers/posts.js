@@ -2,7 +2,7 @@ import { POSTS, PAGE } from '../actions/types';
 import { postsPerPageFunc, pageNumberFunc } from '../utils/posts';
 
 const INITIAL_STATE = {
-  data: [],
+  data: null,
   currentPage: 1,
   postsPerPage: 10,
   posts:[],
