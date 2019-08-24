@@ -7,6 +7,7 @@ import { setMovie } from '../../redux/actions/movies';
 import MovieWrapper from './wrapper/Movies_Wrapper';
 import InputField from '../common/input/Input_Field';
 import CustomButton from '../common/button/Custom_Button';
+import Pagination from './pagination/Pagination';
 
 const TheMovieDB = ({ setMovie }) => {
   const [state, setState] = useState({ movie: '' });
@@ -27,6 +28,7 @@ const TheMovieDB = ({ setMovie }) => {
         <CustomButton value='search' isClass='' />
       </div>
       <MovieWrapper />
+      <Pagination />
     </div>
   )
 };
