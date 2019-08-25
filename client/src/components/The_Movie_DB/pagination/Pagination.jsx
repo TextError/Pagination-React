@@ -32,7 +32,7 @@ const Pagination = ({ movies: { total_pages, page }, nextPage, movie }) => {
 }
 
 Pagination.propTypes = {
-
+  movies: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
