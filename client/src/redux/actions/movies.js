@@ -16,10 +16,10 @@ export const setMovie =  movie => dispatch => {
     }))
 }
 
-export const nextPage = ({ movie, pageNumber }) => dispatch => {
+export const nextPage = ({ movie, page }) => dispatch => {
   dispatch({ type: MOVIE.MOVIE_LOADING });
   axios
-    .get(`https://api.themoviedb.org/3/search/movie?api=${apiKey}&query=${movie}&page=${pageNumber}`)
+    .get(`https://api.themoviedb.org/3/search/movie?api=${apiKey}&query=${movie}&page=${page}`)
     .then(res => dispatch({
       type: MOVIE.MOVIE_NEXT_PAGE,
       payload: res.data
