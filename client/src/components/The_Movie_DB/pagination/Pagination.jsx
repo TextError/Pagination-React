@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
+import { nextPage } from '../../../redux/actions/movies';
 
-const Pagination = ({ movies: { total_pages, page } }) => {
+const Pagination = ({ movies: { total_pages, page }, nextPage, movie }) => {
   const page_element = []
   for (let i = 1; i <= total_pages; i++) {
     let active = page === i ? 'btn btn-primary' : 'btn';
@@ -11,7 +12,7 @@ const Pagination = ({ movies: { total_pages, page } }) => {
       <li 
         className={`mr-1 ml-1 ${active}`}
         key={i}
-        onClick={() => console.log('call next_page()')}      
+        onClick={() => nextPage({ movie, pageNumber:i })}      
       >{i}</li>
     )
   }
@@ -19,7 +20,11 @@ const Pagination = ({ movies: { total_pages, page } }) => {
     <div className='container'>
       <div className='row'>
         <div className='pagination'>
-          {page_element}
+          <ul>
+            {page > 1 ? <li className='btn mr-1'>prev</li>: null}
+            {page_element}
+            {page < total_pages ? <li className='btn ml-1'>next</li>: null}
+          </ul>
         </div>
       </div>
     </div>
@@ -34,4 +39,4 @@ const mapStateToProps = state => ({
   movies: state.movies
 })
 
-export default connect(mapStateToProps, null)(Pagination);
+export default connect(mapStateToProps, { nextPage })(Pagination);

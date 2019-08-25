@@ -28,7 +28,7 @@ const TheMovieDB = ({ setMovie }) => {
         <CustomButton value='search' isClass='' />
       </div>
       <MovieWrapper />
-      <Pagination />
+      <Pagination movie={movie} />
     </div>
   )
 };
