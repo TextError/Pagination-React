@@ -6,14 +6,18 @@ import { createStructuredSelector } from 'reselect';
 import { select_posts_posts } from '../../../redux/selectors/posts';
 
 import Post from '../post/Post';
+import Pagination from '../pagination/Pagination';
 
-const Posts = ({ list_of_posts }) => {
-  return (
-    <div className='posts'>
-      {list_of_posts.map(({ id, title, body }) => <Post key={id} title={title} body={body} />)}
+const Posts = ({ list_of_posts }) => (
+  <div className='posts'>
+    <div className='post-list'>
+      {list_of_posts.map(post => <Post key={post.id} {...post} />)}
     </div>
+    <div className='pagination'>
+      <Pagination />
+    </div>
+  </div>
   )
-};
 
 Posts.propTypes = {
   list_of_posts: PropTypes.array.isRequired
