@@ -2,6 +2,7 @@ import React from 'react'
 
 const Movie = ({ data }) => {
   const { popularity, vote_count, poster_path, adult, original_title, original_language, release_date, overview } = data;
+  console.log(overview)
   return (
     <div className="card" style={{width: "18rem"}}>
       <img className="card-img-top" src={`http://image.tmdb.org/t/p/w185${poster_path}`} alt={`${original_title}-poster`} style={{width:'100%', height:350}} />

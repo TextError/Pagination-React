@@ -15,6 +15,7 @@ const MovieList = ({ movies: { movieData } }) => {
 }
 
 MovieList.propTypes = {
+  movies: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({

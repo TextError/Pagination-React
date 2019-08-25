@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import PostWrapper from './wrapper/Post_Wrapper';
-import Pagination from '../common/pagination/Pagination';
 
 import { connect } from 'react-redux';
 import { setPosts } from '../../redux/actions/posts';
+
+import './json-placeholder.scss';
 
 
 const JsonPlaceholder = ({ setPosts }) => {
@@ -15,9 +16,8 @@ const JsonPlaceholder = ({ setPosts }) => {
   },[setPosts])
 
   return (
-    <div>
+    <div className='json-placeholder'>
       <PostWrapper />
-      <Pagination />
     </div>
   )
 };
