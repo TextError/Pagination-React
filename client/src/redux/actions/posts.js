@@ -14,3 +14,12 @@ export const setPosts = () => dispatch => {
       payload: err.response.data
     }))
 }
+
+export const nextPage = data => ({
+  type: POSTS.NEXT_POST,
+  payload: data
+})
+export const prevPage = data => ({
+  type: POSTS.PREVIOUS_POST,
+  payload: data
+})
