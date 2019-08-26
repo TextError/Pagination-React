@@ -8,6 +8,8 @@ import { select_posts_posts } from '../../../redux/selectors/posts';
 import Post from '../post/Post';
 import Pagination from '../pagination/Pagination';
 
+import './posts.scss';
+
 const Posts = ({ list_of_posts }) => (
   <div className='posts'>
     <div className='post-list'>

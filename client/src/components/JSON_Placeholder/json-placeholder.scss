@@ -1,0 +1,12 @@
+@import "../../app.scss";
+
+.json-placeholder {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    @extend .container
+  }
+}

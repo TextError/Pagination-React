@@ -6,13 +6,15 @@ import { nextPage, prevPage } from '../../../redux/actions/posts';
 import { createStructuredSelector } from 'reselect';
 import { select_posts_current_page, select_posts_pages } from '../../../redux/selectors/posts';
 
+import './pagination.scss';
+
 const Pagination = ({ currentPage, pages, nextPage, prevPage }) => {
   const prev = currentPage > 1 ? true : false;
   const next = currentPage < pages.length ? true : false;
   return (
     <div className="pagination">
-      <button className='btn btn-primary' disabled={!prev} onClick={() => prevPage(currentPage-1)}>
-      <i className="fas fa-arrow-left"></i>
+      <button className='button' disabled={!prev} onClick={() => prevPage(currentPage-1)}>
+        <i className="fas fa-arrow-left"></i>
       </button>
       <div className="pages">
         {currentPage} / {pages[pages.length-1]}

@@ -17,7 +17,9 @@ const JsonPlaceholder = ({ setPosts }) => {
 
   return (
     <div className='json-placeholder'>
-      <PostWrapper />
+      <div className='container'>
+        <PostWrapper />
+      </div>
     </div>
   )
 };
