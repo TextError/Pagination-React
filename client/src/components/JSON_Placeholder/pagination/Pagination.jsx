@@ -13,15 +13,17 @@ const Pagination = ({ currentPage, pages, nextPage, prevPage }) => {
   const next = currentPage < pages.length ? true : false;
   return (
     <div className="pagination">
-      <button className='btn btn-primary' disabled={!prev} onClick={() => prevPage(currentPage-1)}>
-        <i className="fas fa-arrow-left"></i>
-      </button>
-      <div className="pages">
-        {currentPage} / {pages[pages.length-1]}
+      <div className='box'>
+        <button className='btn btn-primary' disabled={!prev} onClick={() => prevPage(currentPage-1)}>
+          <i className="fas fa-arrow-left"></i>
+        </button>
+        <div className="pages">
+          <span>{currentPage}</span> / <span>{pages[pages.length-1]}</span>
+        </div>
+        <button className='btn btn-primary' disabled={!next} onClick={() => nextPage(currentPage+1)}>
+          <i className="fas fa-arrow-right"></i>
+        </button>
       </div>
-      <button className='btn btn-primary' disabled={!next} onClick={() => nextPage(currentPage+1)}>
-        <i className="fas fa-arrow-right"></i>
-      </button>
     </div>
   )
 };
