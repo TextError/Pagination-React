@@ -6,8 +6,10 @@ import './post.scss';
 const Post = ({ title, id }) => (
   <div className='post'>
     <div className='box'>
-      <div className='id'><p className='mb-0'>{id}</p></div>
-      <div className='title'>{title}</div>
+      <div className='id'><p className='mb-0'>{id}.</p></div>
+      <div className='title'>
+        <span>{title}.</span>
+      </div>
     </div>
   </div>
   )

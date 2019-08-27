@@ -13,7 +13,7 @@ const Pagination = ({ currentPage, pages, nextPage, prevPage }) => {
   const next = currentPage < pages.length ? true : false;
   return (
     <div className="pagination">
-      <button className='button' disabled={!prev} onClick={() => prevPage(currentPage-1)}>
+      <button className='btn btn-primary' disabled={!prev} onClick={() => prevPage(currentPage-1)}>
         <i className="fas fa-arrow-left"></i>
       </button>
       <div className="pages">

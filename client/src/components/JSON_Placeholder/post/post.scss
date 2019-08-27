@@ -12,12 +12,24 @@
       justify-content: center;
       align-content: center;
       font-size: 1.25rem;
-      width: 50px;
+      width: 40px;
+      margin-right: 5px;
       text-align: center;
     }
 
     .title {
+      width: 100%;
+      height: 50px;
       border-left: 1px solid black;
+      padding: 0 10px;
+      
+      span {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+      }
     }
   }
 }
