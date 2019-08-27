@@ -5,8 +5,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  
   .container {
-    @extend .container
+    @extend .container;
+    border : 2px solid rgb(110, 110, 110);
   }
 }

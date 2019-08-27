@@ -1,6 +1,10 @@
 .posts {
   display: flex;
   flex-direction: column;
-  border: 1px solid darkorange;
-  padding: 5px 10px;
+  background: white;
+  margin: 5px;
+  
+  .post-list {
+    padding: 10px;
+  }
 }
