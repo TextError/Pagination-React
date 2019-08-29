@@ -1,0 +1,18 @@
+@import "../scss/global.scss";
+
+.the-movie {
+
+  .wrapper {
+    @extend .container;
+    
+    .search-field {
+      .group {
+        width: 100%;
+        padding-right: 20px;
+      }
+    }
+    .search-btn {
+      margin: 43px 0;
+    }
+  }
+}

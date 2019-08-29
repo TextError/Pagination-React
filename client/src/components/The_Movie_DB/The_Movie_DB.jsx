@@ -9,6 +9,8 @@ import InputField from '../common/input/Input_Field';
 import CustomButton from '../common/button/Custom_Button';
 import Pagination from './pagination/Pagination';
 
+import './the_movie_db.scss';
+
 const TheMovieDB = ({ setMovie }) => {
   const [state, setState] = useState({ movie: '' });
   const { movie } = state;
@@ -23,9 +25,21 @@ const TheMovieDB = ({ setMovie }) => {
 
   return (
     <div className='the-movie'>
-      <InputField name='movie' value={movie} onChange={onChange} type='text' label='search Movie' />
-      <div onClick={onSubmit}>
-        <CustomButton value='search' isClass='' />
+      <div className='wrapper'>
+        <div className='row no-gutters'>
+          <div className='col-9'>
+            <div className='search-field'>
+              <InputField name='movie' value={movie} onChange={onChange} type='text' label='search Movie' />
+            </div>
+          </div>
+          <div className='col-3'>
+            <div className='search-btn'>
+              <div onClick={onSubmit}>
+                <CustomButton value='search' isClass='' />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <MovieWrapper />
       <Pagination movie={movie} />
