@@ -1,19 +1,33 @@
 import React from 'react';
 
+import Under18 from '../../assets/underage.png';
+import QuestionMark from '../../assets/questionMark.jpg';
+
 import './movie.scss';
 
 const Movie = ({ data }) => {
   const { popularity, vote_count, poster_path, adult, original_title, original_language, release_date, overview } = data;
+  const under18 = (
+    <div className='under-18'>
+      <img src={Under18} alt='test' height="25px" width="25px" />
+    </div>
+  );
+
+  const img = (
+    <img className="card-img-top" src={`http://image.tmdb.org/t/p/w185${poster_path}`} alt={`${original_title}-poster`} style={{width:'100%', height:350}} />
+  )
+
+  const  noImg= (
+    <img className="card-img-top" src={QuestionMark} alt={`${original_title}-poster`} style={{width:'100%', height:350}} />
+  )
   return (
     <div className='movie'>
       <div className="card" style={{width: "16rem"}}>
         <div className='title'>
           <h5 className="card-title">{original_title}</h5>
         </div>
-        <div className='under-18'>
-          <div>adult: <span className="badge badge-pill badge-primary">{adult}</span></div>
-        </div>
-        <img className="card-img-top" src={`http://image.tmdb.org/t/p/w185${poster_path}`} alt={`${original_title}-poster`} style={{width:'100%', height:350}} />
+        { adult ? under18 : null }
+        { !!poster_path ? img : noImg }
         <div className="card-body">
           <div className='row no-gutters'>
             <div className='col-6'>Vote count</div>
