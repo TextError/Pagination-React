@@ -6,7 +6,7 @@ import QuestionMark from '../../assets/questionMark.jpg';
 import './movie.scss';
 
 const Movie = ({ data }) => {
-  const { popularity, vote_count, poster_path, adult, original_title, original_language, release_date, overview } = data;
+  const { popularity, vote_count, poster_path, adult, original_title, original_language, release_date } = data;
   const under18 = (
     <div className='under-18'>
       <img src={Under18} alt='test' height="25px" width="25px" />
@@ -24,26 +24,35 @@ const Movie = ({ data }) => {
     <div className='movie'>
       <div className="card" style={{width: "16rem"}}>
         <div className='title'>
+          <span class="popover">{original_title}</span>
           <h5 className="card-title">{original_title}</h5>
         </div>
         { adult ? under18 : null }
         { !!poster_path ? img : noImg }
         <div className="card-body">
           <div className='row no-gutters'>
-            <div className='col-6'>Vote count</div>
-            <div className='col-6'><span className="badge badge-pill badge-primary">{vote_count}</span></div>
+            <div className="col-5 offset-1">Populoarity</div>
+            <div className="col-6 d-flex m-auto">
+              <div className="m-auto badge badge-pill badge-primary">{popularity}</div>
+            </div>
           </div>
           <div className='row no-gutters'>
-            <div className='col-6'>Popularity</div>
-            <div className='col-6'><span className="badge badge-pill badge-primary">{popularity}</span></div>
+            <div className="col-5 offset-1">Vote count</div>
+            <div className="col-6 d-flex m-auto">
+              <div className="m-auto badge badge-pill badge-success">{vote_count}</div>
+            </div>
           </div>
           <div className='row no-gutters'>
-            <div className='col-6'>Language</div>
-            <div className='col-6'><span className="badge badge-pill badge-primary">{original_language}</span></div>
+            <div className="col-5 offset-1">Language</div>
+            <div className="col-6 d-flex m-auto">
+              <div className="m-auto badge badge-pill badge-warning">{original_language}</div>
+            </div>
           </div>
           <div className='row no-gutters'>
-            <div className='col-6'>Release date</div>
-            <div className='col-6'><span className="badge badge-pill badge-primary">{release_date}</span></div>
+            <div className="col-5 offset-1">Relase date</div>
+            <div className="col-6 d-flex m-auto">
+              <div className="m-auto badge badge-pill badge-danger">{release_date}</div>
+            </div>
           </div>
         </div>
       </div>
