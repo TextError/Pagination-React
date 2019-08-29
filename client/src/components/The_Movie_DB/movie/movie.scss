@@ -33,6 +33,9 @@
         display: inline-block;
         text-overflow: ellipsis;
       }
+      .long-title {
+        top: -63px !important;
+      }
       .popover {
         width: 100%;
         text-align: center;

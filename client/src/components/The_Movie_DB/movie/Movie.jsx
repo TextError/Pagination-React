@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import Under18 from '../../assets/underage.png';
 import QuestionMark from '../../assets/questionMark.jpg';
@@ -15,16 +16,19 @@ const Movie = ({ data }) => {
 
   const img = (
     <img className="card-img-top" src={`http://image.tmdb.org/t/p/w185${poster_path}`} alt={`${original_title}-poster`} style={{width:'100%', height:350}} />
-  )
+  );
 
   const  noImg= (
     <img className="card-img-top" src={QuestionMark} alt={`${original_title}-poster`} style={{width:'100%', height:350}} />
-  )
+  );
+
+  const longTitle = original_title.length > 40 ? true : false; 
+
   return (
     <div className='movie'>
       <div className="card" style={{width: "16rem"}}>
         <div className='title'>
-          <span class="popover">{original_title}</span>
+          <span className={classnames('popover', {'long-title': longTitle})}>{original_title}</span>
           <h5 className="card-title">{original_title}</h5>
         </div>
         { adult ? under18 : null }
