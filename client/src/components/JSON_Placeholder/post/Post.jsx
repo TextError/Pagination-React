@@ -8,7 +8,7 @@ const Post = ({ title, id }) => (
     <div className='box'>
       <div className='id'><p className='mb-0'>{id}.</p></div>
       <div className='title'>
-        <span>{title}.</span>
+        <span>{title.charAt(0).toUpperCase() + title.slice(1)}.</span>
       </div>
     </div>
   </div>
