@@ -34,15 +34,18 @@ const TheMovieDB = ({ setMovie }) => {
           </div>
           <div className='col-3'>
             <div className='search-btn'>
-              <div onClick={onSubmit}>
+              <button onClick={onSubmit}>test</button>
+              {/* <div onClick={onSubmit}>
                 <CustomButton value='search' isClass='' />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
       </div>
-      <MovieWrapper />
-      <Pagination movie={movie} />
+      <div className='movie-wrapper'>
+        <MovieWrapper />
+        <Pagination movie={movie} />
+      </div>
     </div>
   )
 };

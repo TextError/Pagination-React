@@ -1,0 +1,26 @@
+.movie {
+  margin: 10px 0;
+
+  .card {
+    margin: 0 auto;
+    background-color: transparent;
+    border: none;
+
+    .title {
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+      
+      h5 {
+        font-size: 1.2rem;
+        border-radius: 8px;
+        background-color: rgba(150, 150, 150, 0.5);
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .card-body {
+    padding: 0px;
+    margin: 10px 2rem 20px 2rem;
+  }
+}

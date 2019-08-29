@@ -4,12 +4,18 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Movie from '../movie/Movie';
 
+import './movie-list.scss'
+
 const MovieList = ({ movies: { movieData } }) => {
   return (
-    <div className=''>
-      {movieData.map(i => (
-        <Movie key={i.id} data={i} />
-      ))}
+    <div className='movie-list'>
+      <div className='row no-gutters'>
+        {movieData.map(i => (
+            <div key={i.id} className='col col-sm-6 col-md-4 col-lg-3'>
+              <Movie data={i} />
+            </div>
+          ))}
+      </div>
     </div>
   )
 }
