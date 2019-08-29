@@ -7,7 +7,7 @@ import QuestionMark from '../../assets/questionMark.jpg';
 import './movie.scss';
 
 const Movie = ({ data }) => {
-  const { popularity, vote_count, poster_path, adult, original_title, original_language, release_date } = data;
+  const { popularity, vote_count, poster_path, adult, original_title, original_language, release_date, overview } = data;
   const under18 = (
     <div className='under-18'>
       <img src={Under18} alt='test' height="25px" width="25px" />
@@ -56,6 +56,14 @@ const Movie = ({ data }) => {
             <div className="col-5 offset-1">Relase date</div>
             <div className="col-6 d-flex m-auto">
               <div className="m-auto badge badge-pill badge-danger">{release_date}</div>
+            </div>
+          </div>
+          <div className='row no-gutters'>
+            <div className='col'>
+              <div className='info'>
+                <span>More info</span>
+                <div className='popover-info'>{overview}</div>
+              </div>
             </div>
           </div>
         </div>
