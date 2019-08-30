@@ -49,29 +49,47 @@
       }
     }
     .card-body {
-      .info {
-        margin: 10px auto;
-        width: 70%;
-        background-color: rgba(0, 0, 0, 0.9);
-        color: #fff;
+      .more-info {
 
-        .popover-info {
-          @extend .popover;
-          left: 0px;
+        p {
+          text-align: center;
+          margin-bottom: 0px;
+          font-size: 1.2rem;
+          margin-top: 5px;
         }
-
-        &:hover {
-          cursor: pointer;
-
-          .popover-info {
-            @extend .popover-hover;
+        .on {
+          position: absolute;
+          bottom: 21%;
+          right: 30%;
+        }
+        .off {
+          position: absolute;
+          bottom: 21%;
+          left: 30%;
+        }
+        .info {
+          display: flex;
+          margin: 10px auto;
+          width: 50%;
+          padding: 5px;
+          border-radius: 50px;
+          
+          &:hover {
+            cursor: pointer;
+          }
+          
+          span {
+            background: linear-gradient(to right, #fff, rgb(202, 202, 202));
+            height: 30px;
+            width: 40px;
+            box-shadow: 0 0 5px rgba(128, 128, 128, 0.5);
+            border-radius: 50px;
+            z-index: 20;
+            justify-content: flex-start;
           }
         }
-
-        span {
-          display: flex;
-          justify-content: center;
-          padding: 10px 0;
+        .move {
+          justify-content: flex-end;
         }
       }
     }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
 
 import Under18 from '../../assets/underage.png';
@@ -7,6 +7,7 @@ import QuestionMark from '../../assets/questionMark.jpg';
 import './movie.scss';
 
 const Movie = ({ data }) => {
+  const [info, setInfo] = useState(false);
   const { popularity, vote_count, poster_path, adult, original_title, original_language, release_date, overview } = data;
   const under18 = (
     <div className='under-18'>
@@ -23,6 +24,10 @@ const Movie = ({ data }) => {
   );
 
   const longTitle = original_title.length > 40 ? true : false; 
+
+  const onClick = () => {
+    setInfo(!info)
+  }
 
   return (
     <div className='movie'>
@@ -60,9 +65,16 @@ const Movie = ({ data }) => {
           </div>
           <div className='row no-gutters'>
             <div className='col'>
-              <div className='info'>
-                <span>More info</span>
-                <div className='popover-info'>{overview}</div>
+              <div className='more-info'>
+                <p>More Info</p>
+                <i className='on'>On</i>
+                <i className='off'>Off</i>
+                <div 
+                  onClick={()=> onClick()} 
+                  className={classnames('info', {'move bg-danger' : !info, 'bg-success': info})}
+                  >
+                  <span></span>
+                </div>
               </div>
             </div>
           </div>
