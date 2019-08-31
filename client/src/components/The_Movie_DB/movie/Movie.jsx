@@ -47,10 +47,10 @@ const Movie = ({ data }) => {
         { adult ? under18 : null }
         { !info ? !!poster_path ? img : noImg : overviewPage}
         <div className="card-body">
-          <Badge title='Popularity' data={popularity} />
-          <Badge title='Vote count' data={vote_count} />
-          <Badge title='Language' data={original_language} />
-          <Badge title='Relase date' data={release_date} />
+          <Badge obj={{title:'Popularity', data:popularity , color:'primary'}}/>
+          <Badge obj={{title:'Vote count', data:vote_count , color:'success'}}/>
+          <Badge obj={{title:'Language', data:original_language , color:'warning'}}/>
+          <Badge obj={{title:'Release date', data:release_date , color:'danger'}}/>
           <div className='row no-gutters'>
             <div className='col'>
               <div className='more-info'>
