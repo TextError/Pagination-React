@@ -7,6 +7,32 @@
     background-color: transparent;
     border: none;
 
+    .rotate-card {
+      transform: scale(1);
+      z-index: -10;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      perspective: 1000px;
+      transition: transform 0.6s;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+    }
+
+    .turn-card {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+      transition-duration: 1s !important;
+      -webkit-transition-duration: 1s !important;
+      -moz-transition-duration: 1s !important;
+      -ms-transition-duration: 1s !important;
+      -o-transition-duration: 1s !important;
+    }
+
     .overview {
       display: flex;
       height: 350px;

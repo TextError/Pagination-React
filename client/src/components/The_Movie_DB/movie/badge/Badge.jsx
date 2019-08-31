@@ -11,9 +11,9 @@ const Badge = ({obj}) => {
       </div>
     </div>
   );
-}
+};
 Badge.propTypes = {
   obj: PropTypes.object.isRequired
-}
+};
 
-export default Badge
+export default Badge;
