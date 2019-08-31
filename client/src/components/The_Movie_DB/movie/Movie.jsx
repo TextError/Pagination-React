@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Under18 from '../../assets/underage.png';
 import QuestionMark from '../../assets/questionMark.jpg';
 
 import './movie.scss';
+import Badge from './badge/Badge';
 
 const Movie = ({ data }) => {
   const [info, setInfo] = useState(false);
@@ -45,41 +47,20 @@ const Movie = ({ data }) => {
         { adult ? under18 : null }
         { !info ? !!poster_path ? img : noImg : overviewPage}
         <div className="card-body">
-          <div className='row no-gutters'>
-            <div className="col-5 offset-1">Populoarity</div>
-            <div className="col-6 d-flex m-auto">
-              <div className="m-auto badge badge-pill badge-primary">{popularity}</div>
-            </div>
-          </div>
-          <div className='row no-gutters'>
-            <div className="col-5 offset-1">Vote count</div>
-            <div className="col-6 d-flex m-auto">
-              <div className="m-auto badge badge-pill badge-success">{vote_count}</div>
-            </div>
-          </div>
-          <div className='row no-gutters'>
-            <div className="col-5 offset-1">Language</div>
-            <div className="col-6 d-flex m-auto">
-              <div className="m-auto badge badge-pill badge-warning">{original_language}</div>
-            </div>
-          </div>
-          <div className='row no-gutters'>
-            <div className="col-5 offset-1">Relase date</div>
-            <div className="col-6 d-flex m-auto">
-              <div className="m-auto badge badge-pill badge-danger">{release_date}</div>
-            </div>
-          </div>
+          <Badge title='Popularity' data={popularity} />
+          <Badge title='Vote count' data={vote_count} />
+          <Badge title='Language' data={original_language} />
+          <Badge title='Relase date' data={release_date} />
           <div className='row no-gutters'>
             <div className='col'>
               <div className='more-info'>
                 <p>More Info</p>
-                <i onClick={()=> onClick()} className='on'>On</i>
-                <i onClick={()=> onClick()} className='off'>Off</i>
-                <div 
-                  onClick={()=> onClick()} 
-                  className={classnames('info', {'move bg-danger' : !info, 'bg-success': info})}
-                  >
+                <div
+                  onClick={()=> onClick()}
+                  className={classnames('info', {'move bg-danger' : !info, 'bg-success': info})}>
+                  <i className='on'>On</i>
                   <span></span>
+                  <i className='off'>Off</i>
                 </div>
               </div>
             </div>
@@ -87,7 +68,11 @@ const Movie = ({ data }) => {
         </div>
       </div>
     </div>
-  )
+  );
+};
+
+Movie.propTypes = {
+  data: PropTypes.object.isRequired
 }
 
-export default Movie
+export default Movie;

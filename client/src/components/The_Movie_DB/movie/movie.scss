@@ -96,24 +96,6 @@
           font-size: 1.2rem;
           margin-top: 5px;
         }
-        .on {
-          position: absolute;
-          bottom: 21%;
-          right: 30%;
-
-          &:hover {
-            cursor: pointer;
-          }
-        }
-        .off {
-          position: absolute;
-          bottom: 21%;
-          left: 30%;
-          
-          &:hover {
-            cursor: pointer;
-          }
-        }
         .info {
           display: flex;
           margin: 10px auto;
@@ -123,6 +105,16 @@
           
           &:hover {
             cursor: pointer;
+          }
+          .on {
+            position: absolute;
+            bottom: 21%;
+            right: 30%;
+          }
+          .off {
+            position: absolute;
+            bottom: 21%;
+            left: 30%;
           }
           
           span {
