@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
-const Poster = ({ path, title }) =>(
+const Poster = ({ path, title, hide }) =>(
     <img 
-      className="card-img-top" 
+      className={classnames('card-img-top', {'hide' : hide})} 
       src={path}
       alt={`${title}-poster`} 
       style={{width:'100%', 
@@ -13,7 +14,8 @@ const Poster = ({ path, title }) =>(
 
 Poster.propTypes = {
   path: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  hide: PropTypes.bool.isRequired
 };
 
 export default Poster;

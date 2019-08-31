@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -13,6 +13,9 @@ import Overview from './overview/Overview';
 
 const Movie = ({ data }) => {
   const [info, setInfo] = useState(false);
+  const [hide, setHide] = useState(true);
+
+
   const { popularity, vote_count, poster_path, adult, original_title, original_language, release_date, overview } = data;
 
   const longTitle = original_title.length > 40 ? true : false; 
@@ -24,7 +27,8 @@ const Movie = ({ data }) => {
   );
 
   const onClick = () => {
-    setInfo(!info)
+    setInfo(!info);
+    setHide(!hide)
   }
 
   return (
@@ -35,13 +39,19 @@ const Movie = ({ data }) => {
           <h5 className="card-title">{original_title}</h5>
         </div>
         { adult ? under18 : null }
-        <div className={classnames('rotate-card', {'turn-card': info})}>
-          {
-            !info ? !!poster_path ? 
-            <Poster path={`http://image.tmdb.org/t/p/w185${poster_path}`} title={original_title} /> : 
-            <Poster path={QuestionMark} title={original_title} /> : 
-            <Overview overview={overview} />
-          }
+        <div className="flip-card">
+          <div className={classnames('flip-card-inner', {'flip' : info})}>
+            <div className="flip-card-front">
+              { 
+                !!poster_path ? 
+                <Poster path={`http://image.tmdb.org/t/p/w185${poster_path}`} title={original_title} /> :
+                <Poster path={QuestionMark} title={original_title} />
+              }
+            </div>
+            <div className="flip-card-back">
+              <Overview overview={overview} />
+            </div>
+          </div>
         </div>
         <div className="card-body">
           <Badge obj={{title:'Popularity', data:popularity , color:'primary'}}/>

@@ -6,47 +6,51 @@
   .card {
     background-color: transparent;
     border: none;
-
-    .rotate-card {
-      transform: scale(1);
-      z-index: -10;
-      transform-style: preserve-3d;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      perspective: 1000px;
-      transition: transform 0.6s;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      -moz-backface-visibility: hidden;
-      -ms-backface-visibility: hidden;
-      -o-backface-visibility: hidden;
-    }
-
-    .turn-card {
-      -webkit-transform: rotateY(180deg);
-      -moz-transform: rotateY(180deg);
-      -o-transform: rotateY(180deg);
-      transform: rotateY(180deg);
-      transition-duration: 1s !important;
-      -webkit-transition-duration: 1s !important;
-      -moz-transition-duration: 1s !important;
-      -ms-transition-duration: 1s !important;
-      -o-transition-duration: 1s !important;
-    }
-
-    .overview {
-      display: flex;
+    
+    .flip-card {
+      width: 300px;
       height: 350px;
-      width: 100%;
-      padding: 15px;
-      border: 1px solid #000;
-      font-size: 1.14rem;
-      line-height: 1.7rem;
-      text-align: justify;
+      perspective: 1000px;
+      
+      .flip {
+        transform: rotateY(180deg);
+      }
 
-      i {
-        margin: auto;
+      .flip-card-inner {
+        position: relative;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+        .flip-card-front, .flip-card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+        }
+        
+        .flip-card-back {
+          transform: rotateY(180deg);
+          
+          .overview {
+            display: flex;
+            height: 350px;
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #000;
+            font-size: 1.14rem;
+            line-height: 1.7rem;
+            text-align: justify;
+      
+            i {
+              margin: auto;
+            }
+          }
+        }
       }
     }
+
     .scroll {
       overflow: auto;
 
@@ -179,4 +183,3 @@
     to { opacity: 1; }
   }
 }
-
