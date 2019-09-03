@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -13,8 +13,6 @@ import Overview from './overview/Overview';
 
 const Movie = ({ data }) => {
   const [info, setInfo] = useState(false);
-  const [hide, setHide] = useState(true);
-
 
   const { popularity, vote_count, poster_path, adult, original_title, original_language, release_date, overview } = data;
 
@@ -22,13 +20,12 @@ const Movie = ({ data }) => {
 
   const under18 = (
     <div className='under-18'>
-      <img src={Under18} alt='test' height="25px" width="25px" />
+      <img src={Under18} alt='adult movie' height="25px" width="25px" />
     </div>
   );
 
   const onClick = () => {
     setInfo(!info);
-    setHide(!hide)
   }
 
   return (
