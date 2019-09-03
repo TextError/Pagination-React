@@ -6,9 +6,11 @@
   .card {
     background-color: transparent;
     border: none;
+    width: 16rem;
     
     .flip-card {
-      width: 300px;
+      padding: 0 10px;
+      width: 100%;
       height: 350px;
       perspective: 1000px;
       
@@ -118,6 +120,7 @@
       }
     }
     .card-body {
+
       .more-info {
 
         p {

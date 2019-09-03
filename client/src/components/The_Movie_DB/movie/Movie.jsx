@@ -30,7 +30,7 @@ const Movie = ({ data }) => {
 
   return (
     <div className='movie'>
-      <div className="card" style={{width: "16rem"}}>
+      <div className="card m-auto">
         <div className='title'>
           <span className={classnames('popover', {'long-title': longTitle})}>{original_title}</span>
           <h5 className="card-title">{original_title}</h5>
