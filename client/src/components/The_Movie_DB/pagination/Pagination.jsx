@@ -19,12 +19,14 @@ const Pagination = ({ movies: { total_pages, page }, nextPage, movie }) => {
   return (
     <div className='container'>
       <div className='row'>
-        <div className='pagination'>
-          <ul>
-            {page > 1 ? <li className='btn mr-1' onClick={() => nextPage({ movie, page: page-1 })}>prev</li>: null}
-            {page_element}
-            {page < total_pages ? <li className='btn ml-1'>next</li>: null}
-          </ul>
+        <div className='col'>
+          <div className='pagination'>
+            <ul>
+              {page > 1 ? <li className='btn mr-1' onClick={() => nextPage({ movie, page: page-1 })}>prev</li>: null}
+              {page_element}
+              {page < total_pages ? <li className='btn ml-1'>next</li>: null}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
