@@ -1,8 +1,22 @@
 .pagination {
-  justify-content: center;
-  align-content: center;
-
+  
   ul {
-    margin: 0px;
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 1.3rem;
+
+    .previous {
+      padding-right: 20px;
+    }
+
+    .next {
+      padding-left: 20px;
+    }
+    li {
+      display: inline-block;
+      padding: 5px;
+      margin: 2px;
+    }
   }
 }
