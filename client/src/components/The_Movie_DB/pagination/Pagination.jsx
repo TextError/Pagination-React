@@ -19,10 +19,8 @@ const Pagination = ({ movies: { total_pages }, nextPage, movie }) => {
           breakClassName={'break-me'}
           pageCount={total_pages}
           marginPagesDisplayed={1}
-          pageRangeDisplayed={5}
+          pageRangeDisplayed={3}
           onPageChange={({ selected }) => nextPage({ movie, page:selected })}
-          containerClassName={'pagination'}
-          subContainerClassName={'pages pagination'}
           activeClassName={'active'}
         /> : null
       }
