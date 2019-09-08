@@ -1,3 +1,5 @@
+
+
 .pagination {
   
   ul {
@@ -7,16 +9,40 @@
     font-size: 1.3rem;
 
     .previous {
-      padding-right: 20px;
+      margin-right: 20px;
+      width: 90px;
     }
-
+    
     .next {
-      padding-left: 20px;
+      margin-left: 20px;
+      width: 50px;
+    }
+    .active {
+      background: #007bff;
+      border-radius: 50px;
+      
+      a {
+        color: #fff;
+      }
     }
     li {
       display: inline-block;
-      padding: 5px;
+      padding: 8px;
       margin: 2px;
+
+      :hover {
+        cursor: pointer;
+      }
+
+
+      a {
+        display: inline-block;
+        color: black;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        outline: none;
+      }
     }
   }
 }

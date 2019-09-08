@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import clasnames from 'classnames';
 import ReactPaginate from 'react-paginate';
 
 import { connect } from 'react-redux';
@@ -12,19 +11,21 @@ const Pagination = ({ movies: { total_pages }, nextPage, movie }) => {
 
   return (
     <div className="pagination">
-      <ReactPaginate
-        previousLabel={'previous'}
-        nextLabel={'next'}
-        breakLabel={'...'}
-        breakClassName={'break-me'}
-        pageCount={total_pages}
-        marginPagesDisplayed={1}
-        pageRangeDisplayed={5}
-        onPageChange={({ selected }) => nextPage({ movie, page:selected })}
-        containerClassName={'pagination'}
-        subContainerClassName={'pages pagination'}
-        activeClassName={'active'}
-      />
+      { total_pages >= 1 ?
+        <ReactPaginate
+          previousLabel={'previous'}
+          nextLabel={'next'}
+          breakLabel={'...'}
+          breakClassName={'break-me'}
+          pageCount={total_pages}
+          marginPagesDisplayed={1}
+          pageRangeDisplayed={5}
+          onPageChange={({ selected }) => nextPage({ movie, page:selected })}
+          containerClassName={'pagination'}
+          subContainerClassName={'pages pagination'}
+          activeClassName={'active'}
+        /> : null
+      }
     </div>
   )
 }
