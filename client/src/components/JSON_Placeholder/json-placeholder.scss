@@ -1,7 +1,7 @@
 @import "../scss/global.scss";
 
 .json-placeholder {
-  height: calc(100vh - 102px);
+  min-height: calc(100vh - 102px);
 
   .wrapper {
     display: flex;

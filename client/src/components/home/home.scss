@@ -1,3 +1,28 @@
+$tablet: "(min-width: 568px) and (max-width: 767px)";
+$mobile: "(min-width: 320px) and (max-width: 567px)";
+
 .home {
   height: calc(100vh - 102px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .links {
+    display: flex;
+
+    .custom-button {
+      @media #{$tablet} {
+        min-width: 0px;
+      }
+      @media #{$mobile} {
+        min-width: 0px;
+        padding: 0px 16px;
+      }
+    }
+
+    a {
+      padding: 0 20px;
+    }
+  }
 }
