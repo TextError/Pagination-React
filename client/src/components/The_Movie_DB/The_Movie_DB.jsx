@@ -51,6 +51,6 @@ const TheMovieDB = ({ setMovie }) => {
 
 TheMovieDB.propTypes = {
   setMovie: PropTypes.func.isRequired
-}
+};
 
-export default connect(null, { setMovie })(TheMovieDB)
+export default connect(null, { setMovie })(TheMovieDB);
