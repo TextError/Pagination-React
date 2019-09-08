@@ -24,8 +24,9 @@ const Navbar = () => {
           </button>
         </div>
         <ul className={classnames('nav-links', {'show-nav' : !isOpen})}>
-          <li ><Link to='/json' />Pagination 1</li>
-          <li ><Link to='/the-movie-db' />Pagination 2</li>
+          <li ><Link to='/'>Home</Link></li>
+          <li ><Link to='json'>Pagination 1</Link></li>
+          <li ><Link to='the-movie-db'>Pagination 2 </Link></li>
         </ul>
       </div>
     </nav>
