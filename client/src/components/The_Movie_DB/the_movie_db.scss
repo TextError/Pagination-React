@@ -1,6 +1,7 @@
 @import "../scss/global.scss";
 
 .the-movie {
+  min-height: calc(100vh - 101px);
   .wrapper {
     @extend .container;
     

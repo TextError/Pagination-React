@@ -1,8 +1,7 @@
-$tablet: "(min-width: 568px) and (max-width: 767px)";
-$mobile: "(min-width: 320px) and (max-width: 567px)";
+@import '../scss/global.scss';
 
 .home {
-  height: calc(100vh - 102px);
+  height: calc(100vh - 101px);
   display: flex;
   flex-direction: column;
   justify-content: center;
