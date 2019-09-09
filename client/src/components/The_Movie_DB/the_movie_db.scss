@@ -1,8 +1,5 @@
 @import "../scss/global.scss";
 
-$tablet: "(min-width: 568px) and (max-width: 767px)";
-$mobile: "(min-width: 320px) and (max-width: 567px)";
-
 .the-movie {
   .wrapper {
     @extend .container;
